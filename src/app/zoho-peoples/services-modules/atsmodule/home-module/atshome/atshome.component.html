@@ -1,0 +1,64 @@
+<div class="container-flex">
+
+  <p class="text-right">
+    Hello atshome works!</p>
+
+</div>
+
+<div class="card cardsty">
+
+  <div class="card-header ">
+    <label>Templater Driven Form</label><br/>
+    <label>Registration Form</label>
+  </div>
+
+  <div class="card-body">
+      <table border="1">
+        <tr>
+          <td> <label>FirstName</label></td>
+          <td><input [(ngModel)]="Dataobj.Fname"></td>
+        </tr>
+        <tr>
+          <td><label>LastName</label></td>
+          <td> <input [(ngModel)]="Dataobj.Lname"></td>
+        </tr>
+
+        <tr>
+          <td> <label>Sex</label></td>
+          <td>
+               <input type="radio"  name="gender" value="Male" [(ngModel)]="Dataobj.gender" ><label for="Male">Male</label> 
+            <input type="radio"  name="gender" value="FeMale" [(ngModel)]="Dataobj.gender"> <label for="FeMale">FeMale</label>
+          </td>
+        </tr>
+
+        <tr>
+          <td> <label>MobileNumber</label></td>
+          <td><input [(ngModel)]="Dataobj.Mobile"></td>
+        </tr>
+
+        <tr>
+          <td><label>Email</label></td>
+          <td>  <input [(ngModel)]="Dataobj.Email"></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td> <button   (click)="onsubmit()" >Submit</button></td>
+        </tr>
+
+
+      </table>
+  </div>
+
+  <div class="card-footer">
+    <div *ngFor="let item of arrlist; let i = index">
+      <div>
+        Item {{ i + 1 }}:
+        <div *ngFor="let obj of item | keyvalue">
+          {{ obj.key }}: {{ obj.value }}
+        </div>
+      </div>
+    </div>
+
+
+</div>
+
